@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-6">
+        <h1><?php echo $this->post->getTitle();?></h1>
+    </div>
+    <div class="col-md-6">
+        <a class="btn btn-warning" href="<?= $this->url('blog/edit', ['id' => $this->post->getId()]) ?>">Edit</a>
+    </div>
+</div>
+
+<article>
+	<h2 id="post<?php echo $this->post->getId();?>"><?php echo $this->post->getTitle();?></h2>
+	<p><?php echo $this->post->getText();?></p>
+</article>

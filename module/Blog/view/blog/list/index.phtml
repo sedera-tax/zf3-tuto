@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-6">
+        <h1>Blog</h1>
+    </div>
+    <div class="col-md-6">
+        <a class="btn btn-primary" href="<?= $this->url('blog/add') ?>"><?= $this->translate('Add'); ?></a>
+    </div>
+</div>
+
+<hr>
+
+<?php
+foreach ($this->posts as $post) {
+?>
+    <div class="list-group-item">
+        <h4 class="list-group-item-heading">
+            <a href="<?= $this->url('blog/detail', ['id' => $post->getId()]) ?>">
+                <?php echo $post->getTitle();?>
+            </a>
+        </h4>
+        <div class="btn-group" role="group" aria-label="Post actions">
+            <a class="btn btn-success" href="<?= $this->url('blog/detail', ['id' => $post->getId()]) ?>"><?= $this->translate('View'); ?></a>
+            &nbsp;
+            <a class="btn btn-warning" href="<?= $this->url('blog/edit', ['id' => $post->getId()]) ?>"><?= $this->translate('Edit'); ?></a>
+            &nbsp;
+            <a class="btn btn-danger" onclick="return confirm('Are you sure to delete <?= $post->getTitle();?>?');" href="<?= $this->url('blog/delete', ['id' => $post->getId()]) ?>"><?= $this->translate('Delete'); ?></a>
+        </div>
+        <p><?php echo $post->getText();?></p>
+    </div>
+<?php
+}
+?>
+
+<div class="btn-group" role="group" aria-label="Post actions">
+    <a class="btn btn-primary" href="<?= $this->url('blog/add') ?>"><?= $this->translate('Add'); ?></a>
+</div>
