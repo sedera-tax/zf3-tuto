@@ -36,6 +36,12 @@ CREATE TABLE `album` (
   `title` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+INSERT INTO `album` (`id`,`artist`, `title`) VALUES 
+(1, 'The Military Wives', 'In My Dreams'),
+(2, 'Adele', '21'),
+(3, 'Bruce Springsteen', 'Wrecking Ball (Deluxe)'),
+(4, 'Lana Del Rey', 'Born To Die'),
+(5, 'Gotye', 'Making Mirrors');
 -- --------------------------------------------------------
 
 --
@@ -83,6 +89,9 @@ ALTER TABLE `posts`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+ALTER TABLE `album` 
+  MODIFY `id` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
 
 --
 -- AUTO_INCREMENT for table `posts`
