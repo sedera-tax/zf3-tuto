@@ -5,8 +5,6 @@ $this->headTitle($title);
 <h1><?= $this->escapeHtml($title) ?></h1>
 <p>
     <a class="btn btn-primary" href="<?= $this->url('album', ['action' => 'add']) ?>">Add new album</a>
-    &nbsp;
-    <a class="btn btn-success" href="<?= $this->url('album-list') ?>">List album (with pagination)</a>
 </p>
 
 <table class="table">
@@ -15,7 +13,7 @@ $this->headTitle($title);
         <th>Artist</th>
         <th class="text-center">Action</th>
     </tr>
-	<?php foreach ($this->albums as $album) : ?>
+	<?php foreach ($this->paginator as $album) : ?>
         <tr>
             <td><?= $this->escapeHtml($album->title) ?></td>
             <td><?= $this->escapeHtml($album->artist) ?></td>
@@ -27,3 +25,14 @@ $this->headTitle($title);
         </tr>
 	<?php endforeach; ?>
 </table>
+
+<?= $this->paginationControl(
+// The paginator object:
+	$this->paginator,
+	// The scrolling style:
+	'sliding',
+	// The partial to use to render the control:
+	'partial/paginator',
+	// The route to link to when a user clicks a control link:
+	['route' => 'album-list']
+) ?>

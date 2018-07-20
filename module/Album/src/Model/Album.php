@@ -114,6 +114,4 @@ class Album implements InputFilterAwareInterface {
 		$this->inputFilter = $inputFilter;
 		return $this->inputFilter;
 	}
-
-
 }

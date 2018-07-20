@@ -1,6 +1,7 @@
 <?php
 namespace Album;
 
+use Zend\Router\Http\Literal;
 use Zend\Router\Http\Segment;
 //use Zend\ServiceManager\Factory\InvokableFactory;
 
@@ -36,6 +37,17 @@ return [
 					'constraints' => [
 						'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
 						'id' => '[0-9]+'
+					],
+				],
+			],
+
+			'album-list' => [
+				'type' => Literal::class,
+				'options' => [
+					'route'    => '/album/list',
+					'defaults' => [
+						'controller' => Controller\AlbumController::class,
+						'action'     => 'list',
 					],
 				],
 			],

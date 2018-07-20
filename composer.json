@@ -19,7 +19,8 @@
         "zendframework/zend-cache": "^2.7.1",
         "zendframework/zend-db": "^2.8.1",
         "zendframework/zend-mvc-form": "^1.0",
-        "zendframework/zend-mvc-i18n": "^1.1"
+        "zendframework/zend-mvc-i18n": "^1.1",
+        "zendframework/zend-paginator": "^2.8"
     },
     "autoload": {
         "psr-4": {
@@ -30,7 +31,9 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ApplicationTest\\": "module/Application/test/"
+            "ApplicationTest\\": "module/Application/test/",
+            "AlbumTest\\": "module/Album/test/",
+            "BlogTest\\": "module/Blog/test/"
         }
     },
     "extra": [],
