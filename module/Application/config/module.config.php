@@ -57,4 +57,49 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+
+    'navigation' => [
+	    'default' => [
+		    [
+			    'label' => 'Home',
+			    'route' => 'home',
+		    ],
+		    [
+			    'label' => 'Album',
+			    'route' => 'album',
+			    'pages' => [
+				    [
+					    'label'  => 'Add',
+					    'route'  => 'album',
+					    'action' => 'add',
+				    ],
+				    [
+					    'label'  => 'Edit',
+					    'route'  => 'album',
+					    'action' => 'edit',
+				    ],
+				    [
+					    'label'  => 'List',
+					    'route'  => 'album-list',
+				    ],
+			    ],
+		    ],
+		    [
+			    'label' => 'Blog',
+			    'route' => 'blog',
+			    'pages' => [
+				    [
+					    'label'  => 'Add',
+					    'route'  => 'blog/add',
+					    'action' => 'add',
+				    ],
+				    [
+					    'label'  => 'Edit',
+					    'route'  => 'blog/edit',
+					    'action' => 'edit',
+				    ],
+			    ],
+		    ],
+	    ],
+    ],
 ];

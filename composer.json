@@ -20,7 +20,8 @@
         "zendframework/zend-db": "^2.8.1",
         "zendframework/zend-mvc-form": "^1.0",
         "zendframework/zend-mvc-i18n": "^1.1",
-        "zendframework/zend-paginator": "^2.8"
+        "zendframework/zend-paginator": "^2.8",
+        "zendframework/zend-navigation": "^2.9"
     },
     "autoload": {
         "psr-4": {
