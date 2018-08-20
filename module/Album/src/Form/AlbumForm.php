@@ -31,6 +31,13 @@ class AlbumForm extends Form {
 			],
 		]);
 		$this->add([
+			'name' => 'email',
+			'type' => 'email',
+			'options' => [
+				'label' => 'Email',
+			],
+		]);
+		$this->add([
 			'name' => 'submit',
 			'type' => 'submit',
 			'attributes' => [

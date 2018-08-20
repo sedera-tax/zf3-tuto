@@ -33,15 +33,16 @@ USE `tutoriel`;
 CREATE TABLE `album` (
   `id` int(11) NOT NULL,
   `artist` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL
+  `title` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `album` (`id`,`artist`, `title`) VALUES 
-(1, 'The Military Wives', 'In My Dreams'),
-(2, 'Adele', '21'),
-(3, 'Bruce Springsteen', 'Wrecking Ball (Deluxe)'),
-(4, 'Lana Del Rey', 'Born To Die'),
-(5, 'Gotye', 'Making Mirrors');
+INSERT INTO `album` (`id`,`artist`, `title`) VALUES
+(1, 'The Military Wives', 'In My Dreams', ''),
+(2, 'Adele', '21', ''),
+(3, 'Bruce Springsteen', 'Wrecking Ball (Deluxe)', ''),
+(4, 'Lana Del Rey', 'Born To Die', ''),
+(5, 'Gotye', 'Making Mirrors', '');
 -- --------------------------------------------------------
 
 --
@@ -67,7 +68,7 @@ INSERT INTO `posts` (`id`, `title`, `text`) VALUES
 (6, 'Blog #6', 'Welcome to my sixth blog post'),
 (7, 'Title Yan', 'Text Yan'),
 (11, 'Pâté pour chien', 'Pâté pour chien Pâté pour chien Pâté pour chien\r\n\r\nPâté pour chien Pâté pour chien'),
-(9, 'Title 9', '#9 \'Text; \"!!'),
+(9, 'Title 9', '#9 Text; \"!!'),
 (10, 'Title 10', 'Text 10 ;) bis');
 
 --

@@ -7,6 +7,7 @@ use Zend\Filter\ToInt;
 use Zend\InputFilter\InputFilter;
 use Zend\InputFilter\InputFilterAwareInterface;
 use Zend\InputFilter\InputFilterInterface;
+use Zend\Validator\EmailAddress;
 use Zend\Validator\StringLength;
 
 class Album implements InputFilterAwareInterface {
@@ -26,6 +27,11 @@ class Album implements InputFilterAwareInterface {
 	public $title;
 
 	/**
+	 * @var string
+	 */
+	public $email;
+
+	/**
 	 * @var InputFilterInterface
 	 */
 	private $inputFilter;
@@ -35,6 +41,7 @@ class Album implements InputFilterAwareInterface {
 		$this->id = !empty($data['id']) ? $data['id'] : null;
 		$this->artist = !empty($data['artist']) ? $data['artist'] : null;
 		$this->title = !empty($data['title']) ? $data['title'] : null;
+		$this->email = !empty($data['email']) ? $data['email'] : null;
 	}
 
 	public function getArrayCopy() {
@@ -42,6 +49,7 @@ class Album implements InputFilterAwareInterface {
 			'id' => $this->id,
 			'artist' => $this->artist,
 			'title' => $this->title,
+			'email' => $this->email,
 		];
 	}
 
@@ -108,6 +116,32 @@ class Album implements InputFilterAwareInterface {
 						'max' => 100,
 					],
 				],
+			],
+		]);
+
+		$inputFilter->add([
+			'name' => 'email',
+			'required' => false,
+			'filters' => [
+				['name' => StripTags::class],
+				['name' => StringTrim::class],
+			],
+			'validators' => [
+				[
+					'name' => StringLength::class,
+					'options' => [
+						'encoding' => 'UTF-8',
+						'min' => 1,
+						'max' => 255,
+					],
+				],
+				[
+					'name' => EmailAddress::class,
+					'options' => [
+						'allow' => \Zend\Validator\Hostname::ALLOW_DNS,
+						'useMxCheck' => false,
+					],
+				]
 			],
 		]);
 

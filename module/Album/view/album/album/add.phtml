@@ -14,6 +14,11 @@ $artist = $form->get('artist');
 $artist->setAttribute('class', 'form-control');
 $artist->setAttribute('placeholder', 'Artist');
 
+// This provides a default CSS class and placeholder text for email element:
+$email = $form->get('email');
+$email->setAttribute('class', 'form-control');
+$email->setAttribute('placeholder', 'Email');
+
 // This provides CSS classes for the submit button:
 $submit = $form->get('submit');
 $submit->setAttribute('class', 'btn btn-primary');
@@ -33,6 +38,12 @@ echo $this->form()->openTag($form);
         <?= $this->formLabel($artist) ?>
         <?= $this->formElement($artist) ?>
         <?= $this->formElementErrors()->render($artist, ['class' => 'help-block']) ?>
+    </div>
+
+    <div class="form-group">
+		<?= $this->formLabel($email) ?>
+		<?= $this->formElement($email) ?>
+		<?= $this->formElementErrors()->render($email, ['class' => 'help-block']) ?>
     </div>
 <?php
 echo $this->formHidden($form->get('id'));

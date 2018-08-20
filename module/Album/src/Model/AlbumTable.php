@@ -66,7 +66,8 @@ class AlbumTable {
 	public function saveAlbum(Album $album) {
 		$data = [
 			'artist' => $album->artist,
-			'title' => $album->title
+			'title' => $album->title,
+			'email' => $album->email
 		];
 
 		$id = (int) $album->id;

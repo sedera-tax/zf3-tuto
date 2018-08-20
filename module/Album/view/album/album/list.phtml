@@ -11,12 +11,14 @@ $this->headTitle($title);
     <tr>
         <th>Title</th>
         <th>Artist</th>
+        <th>Email</th>
         <th class="text-center">Action</th>
     </tr>
 	<?php foreach ($this->paginator as $album) : ?>
         <tr>
             <td><?= $this->escapeHtml($album->title) ?></td>
             <td><?= $this->escapeHtml($album->artist) ?></td>
+            <td><?= $this->escapeHtml($album->email) ?></td>
             <td align="center">
                 <a class="btn btn-warning" href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>">Edit</a>
                 &nbsp;
